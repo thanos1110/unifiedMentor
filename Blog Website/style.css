@@ -12,6 +12,9 @@ nav ul li {
     padding: 10px;
 }
 
+a {
+    text-decoration: none;
+}
 
 body {
     margin: 0;
