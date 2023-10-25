@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex-basis: calc(33.33% - 10px);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Introduction to Linux Commands.</h1>
+    <p>Linux All Command Screenshots ls all commands dir all Commands cat all commands Create and Delete Directory and
+        Files Copying Files from one folder to its sibling Folder Command Delete Directory with its content pwd
+        navigation from one folderto other echo</p>
+    <div class="gallery">
+        <div class="card" onclick="showFullscreen('image1.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8Afb_KUOu_bIOWglGZV_Dgdy_ql-0g-VLiDFhjf-AX3OLkYrptETCk2ZSkyLIZxjOau_XHFGz6UK_uJHHfu-fSKgiPVmquxeF1PADYKKKA8EcMNCBcL_xcWTBCYDFAePkd4xfIW9ZWnFxESBonB2ywRVq_SaYkk8JaPXhryickucIo8TyP4T2pQ/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%207.51.55%20PM.png"
+                alt="Image 1">
+        </div>
+        <div class="card" onclick="showFullscreen('image2.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv45rY9M5uae1W9hadqIa8HfVEEG1_Xq0RbJtP8AoJiVqXL7znawGZbq2D4yuvqUacXdT6mJGEr5m7Hv8czCiV3gWy_ya0YkO1e5obTF1GbeYr5dd8eWq656Uys8DiRXj5ljvpDvXZYDEsq9YVKlBKER_k6l_BstxW74zjyxlfWc2qTO19ZGW81g/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%207.54.01%20PM.png"
+                alt="Image 2">
+        </div>
+        <div class="card" onclick="showFullscreen('image3.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEil9ZwyT9kJiDU6wHNMWLDNbmXo-D59nVnMhDru5QcaZluOPiOvX85qax6cuRO-avSofQx0_mFkkgojx5C8PtUV9bV3DayO4tggGc4xl7MMkiMrb4Bp10TvmkJqQy5WiVaIMPrU7FYn04z0MEU47MDrd0m4HgQFLEbQkC4WekMLqhRbEjDNNBTfoQ/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.11.52%20PM.png"
+                alt="Image 3">
+        </div>
+        <!-- Add more cards with images as needed -->
+        <div class="card" onclick="showFullscreen('image1.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheGZcMBTJLSWz4nOh3NK21gOe1HD3Bhke1gxMYSKA9M3m4-rm1fCcb8xF8NHiD6nSnVu5o1hAWrYH0NRGs6k9TX5fR9mznW_kdG1qizGX4ki28bLTP7m-znbTnNhcpCKaTuOr5oHKfVJwdLIhHM7k-3zU7jBOkJ7uWw5j-FmwLCaoLiBC6_87ZjA/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.16.27%20PM.png"
+                alt="Image 1">
+        </div>
+        <div class="card" onclick="showFullscreen('image2.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZsjA9CnPPyoMZkYmBbYqEKobt2fenDTchykGHwHS2-hQpz_m_nYYaHO9Mp6Q4YV_1puynhdQZ60jTncKZUq76mDlhQsrrI9hq06xEYwBF0n1SW4pVicIb1anAatzWLqYvgj4wEJzCP3CHVgy2RfA0bY50z1CkhysnCd9I6J62FjssxKNOHlMGXw/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.26.35%20PM.png"
+                alt="Image 2">
+        </div>
+        <div class="card" onclick="showFullscreen('image3.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJgfxbOqADp2wagaWs_z7BTmk3uF1sxOTaqDZNdobH-KE-dhW-k9R7dcEfevZExUFeCDkarzjWSB-FIhFRbmcWQNDg2IcOCILuMwFtWvjxaiW4g61SMV3RNFT8OvHi99euCol21fFYXT-i24SDmUGaC9cc59vDX5BxW1CkuTtNFHxYKHLVaBsXOA/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.19.11%20PM.png"
+                alt="Image 3">
+        </div>
+        <!-- Add more cards with images as needed -->
+        <div class="card" onclick="showFullscreen('image1.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhihMt6G_nmUgSMg8uHA4bD0BJ4s_lQxMCgGjauxsb2OEGOoJDmNAzp6sfxyeUTJB8s6g7WX7P4ni6Z3SX8AuVj0vaZmYGK6EjdPSiLFBGqXUIzRmpyVgOIwDP8eHxHeev1vjPyjZRvdot8OQhBfNb_fM74-7ogB-wafZP2dZ9Xab8Hji2FVzs0vQ/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.21.43%20PM.png"
+                alt="Image 1">
+        </div>
+        <div class="card" onclick="showFullscreen('image2.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_xPeUhIzq1mJ0hpkU9U0s3yaxIbhkOYabBjHdvwHq9wkTAXLdQQ_wRiV_RAQtC6N08Yo1u9IWT6h3O2PGlBz2n1cvwBaQoBH_FlQVLGDL6uCuRfwas3xXoYyZ7qBugz0xCIcIJzQHxC7WXr-KpCpc6Wv_FnC-S8JwmUg2zbnBa-TGt3TxM13og/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.23.36%20PM.png"
+                alt="Image 2">
+        </div>
+        <div class="card" onclick="showFullscreen('image3.jpg')">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg64aUx8gt2azkkjRK4dZLkE61LDs7Ugz206W5zrw5TLAd0LHlL_7vpWzAbbkiosS9HsWVGFkgwHuvcSprCqfDybAk0VSnulBoRsRvP0gTXRsjsGyxMo9d1vHHFcusGPYaBVMNf0Wv_2Whk14xgRHC3DyBiSQtuwCaSg_HSmAzC4oaOO2pp4qO0jg/s1899/Ubuntu%2022.04.2%20LTS%2024-03-2023%208.25.29%20PM.png"
+                alt="Image 3">
+        </div>
+        <!-- Add more cards with images as needed -->
+    </div>
+
+
+
+</body>
+
+</html>

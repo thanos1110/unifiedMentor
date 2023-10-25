@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        pre {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CREATING A DATABASE TO MANAGE THE DATA OF CATS.</h1>
+    <pre>
+        <h2>Adding data in database</h2>
+CREATE DATABASE cats_app;
+
+USE cat_app;
+
+CREATE TABLE cats (
+
+--> name VARCHAR(50),
+
+--> age INT
+
+--> );
+
+INSERT INTO cats(name,age)VALUES('Manya', 2);
+
+INSERT INTO cats(name,age)
+
+VALUES('Manya', 2)
+
+,('Tommy',3)
+
+,('Blue',1);
+<hr>
+<h2>Searching data in database</h2>
+SELECT * FROM cats;
+
+SHOW COLUMNS FROM cats;
+
+DESC cats;
+
+DROP TABLES <table name>;
+
+DROP DATABASE <name>;</pre>
+</body>
+
+</html>
